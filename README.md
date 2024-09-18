@@ -1,5 +1,7 @@
 # 🌍 Despliegue de una Aplicación Web con Terraform y Azure
 
+![](img/applycomplete.png)
+
 En esta práctica, configuramos y desplegamos una aplicación web utilizando **Terraform** para gestionar varios recursos en **Azure**. A continuación, se describe cada paso de la práctica, desde la creación del **Resource Group** hasta el despliegue de la **Function App** y la realización de pruebas.
 
 ## 📁 Creación del Resource Group
@@ -16,7 +18,7 @@ resource "azurerm_resource_group" "rg" {
 Este bloque define el Resource Group en la ubicación especificada.
 
 
-![](docs/resourceGroup.png)
+![](img/Resourcegroups.png)
 
 ---
 ## 🗄️ Creación del Storage Account
@@ -33,7 +35,7 @@ resource "azurerm_storage_account" "sa" {
 }
 ```
 
-![](docs/storage.png)
+
 
 ---
 
@@ -51,8 +53,6 @@ resource "azurerm_service_plan" "sp" {
 }
 
 ```
-
-![](docs/app.png) 
 
 ---
 ## ⚡ Implementación de la Function App
@@ -77,7 +77,7 @@ resource "azurerm_windows_function_app" "wfa" {
 }
 ```
 
-![](docs/function.png) 
+![](img/distri2024molta.png)
 
 ---
 ## 💻 Código
@@ -114,7 +114,7 @@ resource "azurerm_function_app_function" "faf" {
   })
 }
 ```
-![](docs/code.png)
+![](img/distri2024moltacodetest.png)
 
 ---
 ## 🌐 URL de la Function App
@@ -130,5 +130,13 @@ output "url" {
 ```
 Esta URL es pública y accesible para invocar la función desplegada.
 
-![](docs/url.png)
 
+---
+
+## 📂 Archivos Utilizados
+
+1. main.tf: Define los recursos principales de Azure que se utilizarán, como el Resource Group, la Storage Account, el Service Plan y la Function App.
+   
+2. output.tf: Extrae y muestra la URL de la aplicación.
+   
+3. variables.tf: Contiene las variables que facilitan la parametrización del nombre de los recursos y las ubicaciones.
